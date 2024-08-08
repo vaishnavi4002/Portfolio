@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
+
 const ContactMe = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -16,21 +18,35 @@ const ContactMe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    console.log('Form submitted:', formData);
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+
+    // Replace these values with your EmailJS values
+    const serviceID = 'service_3uocswu';
+    const templateID = 'template_nqwz2d8';
+    const userID = 'XtAM3KHbO-fxb3M1l';
+
+    emailjs.send(serviceID, templateID, formData, userID)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+        alert('Message sent successfully!');
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        alert('Failed to send message.');
+      });
   };
 
   return (
     <motion.div 
-    initial={{x:100,opacity:0}}
-        whileInView={{x:0,opacity:1}}
-        transition={{duration:0.5 ,delay:0.2}}
-    className=" border-b border-neutral-900 contact-me-section p-8">
+      initial={{x:100,opacity:0}}
+      whileInView={{x:0,opacity:1}}
+      transition={{duration:0.5 ,delay:0.2}}
+      className="border-b border-neutral-900 contact-me-section p-8"
+    >
       <h2 className="text-3xl mb-4 text-center">Contact Me</h2>
       <form onSubmit={handleSubmit} className="max-w-md mx-auto">
         <div className="mb-4">
@@ -76,8 +92,3 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
-
-
-
-
-
