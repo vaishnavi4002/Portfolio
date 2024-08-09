@@ -1,6 +1,6 @@
 
 import {RiReactjsLine} from "react-icons/ri"
-import { SiHtml5, SiCss3, SiJavascript } from 'react-icons/si';
+import { SiHtml5, SiCss3, SiJavascript,SiDjango } from 'react-icons/si';
 import { motion } from "framer-motion";
 
 const iconvariant=(duration)=>({
@@ -50,6 +50,13 @@ const Tech = () => {
                 animate="animate"
                className="rounded-2xl border-4 border-neutral-800 p-4">
                   <RiReactjsLine className="text-6xl text-cyan-400"/>
+               </motion.div>
+               <motion.div 
+                variants={iconvariant(5)}
+                initial="initial"
+                animate="animate"
+               className="rounded-2xl border-4 border-neutral-800 p-4">
+                  <SiDjango className="text-6xl text-teal-600"/>
                </motion.div>
           </div>
     </div>

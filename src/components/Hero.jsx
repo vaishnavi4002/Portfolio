@@ -30,7 +30,7 @@ function Hero() {
                    initial='hidden'
                    animate='visible'
                   className="bg-gradient-to-r from-pink-300 via-slate-500
-                  to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"> Frontend Developer</motion.span>
+                  to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"> Software Developer</motion.span>
 
                   <motion.p
                    variants={container(1)}
@@ -38,7 +38,7 @@ function Hero() {
                    animate='visible'
                      className="my-2 max-w-xl py-6 font-light tracking-tighter">
 I am a skilled web developer with expertise in HTML, CSS, Tailwind CSS, 
-React, and JavaScript. I am proficient in building responsive and 
+React, JavaScript and Django. I am proficient in building responsive and 
 dynamic web applications, utilizing modern frameworks and libraries to deliver high-quality user experiences.
                   </motion.p>
                </div>
